@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService, RegisterModel } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { APP_LOGIN_URL } from 'src/app/utils/constants';
 
 @Component({
   selector: 'app-register',
@@ -8,25 +10,18 @@ import { AuthService, RegisterModel } from 'src/app/services/auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  full_name: string;
-  email: string;
-  password: string;
+  registerForm = new FormGroup({
+    email: new FormControl('', [Validators.email, Validators.required]),
+    full_name: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required])
+  }) 
 
   constructor(
     private authService: AuthService,
     private router: Router
-  ) {
-    this.email = '';
-    this.full_name = '';
-    this.password = '';
-  }
+  ) {}
 
   registerUser() {
-    this.authService.registerUser({
-      full_name: this.full_name,
-      email: this.email,
-      password: this.password,
-      password_confirmation: this.password
-    }, () => { this.router.navigate(['/login']) });
+    this.authService.registerUser(this.registerForm.value, () => { this.router.navigate([APP_LOGIN_URL]) });
   }
 }
