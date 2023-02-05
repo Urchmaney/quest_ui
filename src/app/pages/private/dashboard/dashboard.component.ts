@@ -8,6 +8,8 @@ import { AuthComponent } from '../auth_component';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent extends AuthComponent {
+
+  projects = ["", "", "", "", "", "", ""]
   constructor(router: Router) {
     super(router);
   }
