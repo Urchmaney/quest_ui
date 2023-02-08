@@ -9,6 +9,9 @@ import { HomeComponent } from './pages/public/home/home.component';
 import { RegisterComponent } from './pages/public/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './pages/private/dashboard/dashboard.component';
+import { SideBarComponent } from './core/side-bar/side-bar.component';
+import { HeaderComponent } from './core/header/header.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -16,14 +19,17 @@ import { DashboardComponent } from './pages/private/dashboard/dashboard.componen
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    SideBarComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
