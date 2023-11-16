@@ -22,8 +22,35 @@
         </span>
         Use Template
       </a>
-      <button class="btn ms-4" style="background-color: var(--secondary-color);"> <fa-icon [icon]="faPlus"></fa-icon>New Project</button>
+      <button class="btn ms-4" style="background-color: var(--secondary-color);"  data-bs-toggle="modal" data-bs-target="#exampleModal"> <fa-icon [icon]="faPlus"></fa-icon>New Project</button>
     </div>
   </div>
   
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="p-3">
+          <input type="input" placeholder="Name" required class="form-control" style="border-radius: 0;"/>
+        </div>
+        <div class="p-3">
+          <textarea placeholder="Description" class="form-control" style="border-radius: 0; height: 100px;" required></textarea>
+        </div>
+        <div class="p-3">
+          <input type="input" placeholder="Project root question" required class="form-control" style="border-radius: 0;"/>
+        </div>
+      </div>
+      <div class="modal-footer border-0 p-3">
+        <button type="button" class="btn" style="background-color: var(--secondary-color);">Create Project</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End of Modal -->

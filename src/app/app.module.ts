@@ -12,6 +12,8 @@ import { DashboardComponent } from './pages/private/dashboard/dashboard.componen
 import { SideBarComponent } from './core/side-bar/side-bar.component';
 import { HeaderComponent } from './core/header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { QuestionDetailComponent } from './pages/private/question-detail/question-detail.component';
+import { QuestionBoxComponent } from './core/question-box/question-box.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RegisterComponent,
     DashboardComponent,
     SideBarComponent,
-    HeaderComponent
+    HeaderComponent,
+    QuestionDetailComponent,
+    QuestionBoxComponent
   ],
   imports: [
     BrowserModule,
